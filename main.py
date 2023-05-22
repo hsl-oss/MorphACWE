@@ -1,4 +1,4 @@
-from utils import Imgseg
+from imgseg import Imgseg
 from PIL import Image
 import numpy as np
 
@@ -10,6 +10,6 @@ img = img.resize((320,240))
 img = np.array(img)   # (240, 320, 3)   高 宽 通道
 
 seg = Imgseg(img_path=img, grid_size=grid_size)
-u, c_rate, u_rate = seg.seg_rate()
+u, img_contours, c_rate, u_rate = seg.seg_rate()
 
 print(c_rate, u_rate)
